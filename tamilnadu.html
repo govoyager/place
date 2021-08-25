@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+#places{
+  width:300px;
+  height:200px;
+}
 
 </style>
 <body class="w3-light-grey">
@@ -85,57 +89,47 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <!-- Push down content on small screens -->
   <div class="w3-hide-large" style="margin-top:83px"></div>
   <!-- Product grid -->
-<div class="w3-row w3-center">
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <a style="text-decoration:none;color:black" href="majorcities.html"><img src="cities.jpg" style="height:200px;width:300px">    
+<div class="w3-main w3-content w3-padding" style="max-width:1500px;">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <a style="text-decoration:none;color:black" href="majorcities.html"><img id="places" src="cities.jpg" >    
         <p>Major Cities</p></a>
-      </div>
-      <div class="w3-container">
-        <img src="falls2.jpg" style="height:200px;width:300px">  
-        <p>Water Falls</p>    
-      </div>
     </div>
-
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="heritage.jpg" style="height:200px;width:300px">  
-          <p>UNESCO World Heritage Sites</p>        
-        </div>      
-      </div>
-      <div class="w3-container">
-        <img src="hills1.jpeg" style="height:200px;width:300px"> 
-        <p>Hill Station</p>      
-      </div>
+    <div class="w3-quarter">
+      <img id="places" src="falls2.jpg" >  
+        <p>Water Falls</p> 
     </div>
-
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <img src="temples.jpg" style="height:200px;width:300px">
-        <p>Religious Sites</p>       
-      </div>
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="beaches.jpg" style="height:200px;width:300px">    
-          <p>Beaches</p>       
-        </div>
-      </div>
+    <div class="w3-quarter">
+      <img id="places" src="heritage.jpg" >  
+          <p>UNESCO World Heritage Sites</p>
     </div>
-
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <img src="parks3.jpg" style="height:200px;width:300px">
+    <div class="w3-quarter">
+      <img id="places" src="hills1.jpeg" > 
+        <p>Hill Station</p>
+    </div>
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img id="places" src="temples.jpg" >
+        <p>Religious Sites</p>
+    </div>
+    <div class="w3-quarter">
+      <img id="places" src="beaches.jpg" >    
+          <p>Beaches</p>
+    </div>
+    <div class="w3-quarter">
+      <img id="places" src="parks3.jpg" >
         <p>Sancturies & National Parks</p>
-      </div>
-      <div class="w3-container">
-        <img src="forest.jpg" style="height:200px;width:300px">
-        <p>Forest</p>
-      </div>
     </div>
-  </div>                      
-</div>
-
+    <div class="w3-quarter">
+      <img id="places" src="forest.jpg" >
+        <p>Forest</p>
+    </div>
+  </div>
 <footer style="font-size:20px"class="w3-container w3-teal w3-center w3-margin-top">
   <p>Find us on social media.</p>
   <i class="fa fa-facebook-official w3-hover-opacity"></i>
