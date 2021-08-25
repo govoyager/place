@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>States and Union Territories of India</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -15,7 +15,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   border: 1px solid #4CAF50;
 }
 .w3-bar a:hover:not(#active) {background-color: #ddd;}
-
+#places{
+  width:300px;
+  height:200px;
+}
 
 </style>
 <body>
@@ -33,7 +36,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 <div class="w3-top">
   <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
     <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">&#9776;</div>
-    <div class="w3-right w3-padding-16">Mail</div>
+    <div class="w3-right w3-padding-16"><a href="index.html" style="text-decoration:none;color:black;">Home</a></div>
     <div class="w3-center w3-padding-16">States</div>
   </div>
 </div>
@@ -44,17 +47,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
     <div class="w3-quarter">
-      <img src="Ladakh.jpg" alt="Sandwich" style="width:100%">
+      <img id="places" src="Ladakh.jpg" alt="Sandwich" style="width:100%">
       <h3>Ladakh</h3>
       <p>Capital: Leh.</p>
     </div>
     <div class="w3-quarter">
-      <img src="Lakshadweep.jpg" alt="Steak" style="width:100%">
+      <img id="places" src="Lakshadweep.jpg" alt="Steak" style="width:100%">
       <h3>Lakshadweep</h3>
       <p>Capital: Kavaratti.</p>
     </div>
     <div class="w3-quarter">
-      <img src="Puducherry.jpg" alt="Cherries" style="width:100%">
+      <img id="places" src="Puducherry.jpg" alt="Cherries" style="width:100%">
       <h3>Puducherry</h3>
       <p>Capital: Pondicherry</p>
     </div>
