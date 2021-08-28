@@ -14,9 +14,60 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   height:200px;
 }
 
+.text-center{
+    text-align: center;
+    font-weight:normal;
+}
+.social_media_div{
+  position:fixed;
+    right:0px;
+    top: 50px;
+}
+.social_media_div li{
+    list-style: none;
+    margin: 25px 0px;
+}
+.social_media_div li a i{
+    text-decoration: none;
+    padding: 20px 21px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 30px;
+    font-weight: bold;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.instagram-icon{
+    background-color: black;
+    border: 1px solid black;
+    box-shadow: 0px 2px 4px 4px #ddcfe2;
+}
+
+.social_media_div li a:hover i{
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms--transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    transition: all 0.4s;
+}
 </style>
 <body class="w3-light-grey">
-<div style="text-align:center"class="w3-white w3-text-grey w3-card-4"><h1><i class="fa fa-location-arrow fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Tamil Nadu</h1></div>
+<div class="social_media_div">
+            <ul class="icons_list">      
+                <li>
+                    <a href="index.html"><i class="instagram-icon fa fa-home"></i></a>
+                </li>
+            </ul>
+        </div>
+<div style="text-align:center"class="w3-white w3-text-grey w3-card-4"><h1><i class="fa fa-location-arrow fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>TamilNadu</h1></div>
 <!-- Page Container -->
 <div class="w3-content w3-margin-top" style="max-width:1400px;">
 
@@ -43,6 +94,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           </div>
 	  <p><i class="fa fa-thumb-tack fa-fw w3-margin-right w3-large w3-text-teal"></i><b style="color:black">Coordinates</b><br>  	  
 	  <p><a href="https://geohack.toolforge.org/geohack.php?pagename=Tamil_Nadu&params=13.09_N_80.27_E_region:IN-TN_type:adm1st" style="color:black;text-decoration:none">13.09°N 80.27°E</a></p>
+          <p style="color:black">* To get your current location, click the button below *</p>
+          <button onclick="getLocation()">Try It</button>
+          <p id="demo"></p>
         </div>
       </div><br>
 
@@ -69,8 +123,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
 	<div class="w3-container">
 	<h5 class="w3-opacity"><b>According to 2011 census Tamil Nadu has a total population of '72,147,030' people which got ranked 6th over all other states. With a density of 550/kmsq.</b></h5> 
-        <h5 class="w3-opacity"><b>It has a total count of 38 districts with Chennai as its largest metropolitan Area.</p>
-	</div><br><br><br><br>
+        <h5 class="w3-opacity"><b>It has a total count of 38 districts with Chennai as its largest metropolitan Area.</b></p>
+        <h5 class="w3-opacity"><b>Tamil Nadu is the most urbanised state in India, and one of the most industrialised states; the manufacturing sector accounts for more than one-third of the state's GDP.</b></h5>
+        <h5 class="w3-opacity"><b>Song- </b> Invocation to Goddess Tamil, <b> Dance- </b> Bharatanatyam,<b>Flower- </b> Gloriosa lily,<b> Fruit- </b> Jackfruit and Mango, <b> Tree- </b> Palm Tree,<b> Sport- </b> Kabbadi</b><h5>
+	</div><br><br><br>
       </div>
 
 
@@ -98,8 +154,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <p>Major Cities</p></a>
     </div>
     <div class="w3-quarter">
-      <a href="waterfalls.html" style="text-decoration:none"><img id="places" src="falls2.jpg" >  
-	      <p>Water Falls</p> </a>
+      <a style="text-decoration:none;color:black" href="waterfalls.html"><img id="places" src="falls2.jpg" >  
+        <p>Water Falls</p></a>
     </div>
     <div class="w3-quarter">
       <img id="places" src="heritage.jpg" >  
@@ -141,5 +197,23 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <br>
 </footer><br>
 
+
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
 </body>
 </html>
