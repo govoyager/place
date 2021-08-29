@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<title>Tripura</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+#places{
+  width:300px;
+  height:200px;
+}
+
+.text-center{
+    text-align: center;
+    font-weight:normal;
+}
+.social_media_div{
+  position:fixed;
+    right:0px;
+    top: 50px;
+}
+.social_media_div li{
+    list-style: none;
+    margin: 25px 0px;
+}
+.social_media_div li a i{
+    text-decoration: none;
+    padding: 20px 21px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 30px;
+    font-weight: bold;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.instagram-icon{
+    background-color: black;
+    border: 1px solid black;
+    box-shadow: 0px 2px 4px 4px #ddcfe2;
+}
+
+.social_media_div li a:hover i{
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms--transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    transition: all 0.4s;
+}
+</style>
+<body class="w3-light-grey">
+<div class="social_media_div">
+            <ul class="icons_list">      
+                <li>
+                    <a href=""><i class="instagram-icon fa fa-instagram"></i></a>
+                </li>
+            </ul>
+        </div>
+<div style="text-align:center"class="w3-white w3-text-grey w3-card-4"><h1><i class="fa fa-location-arrow fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Tripura</h1></div>
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+    <div class="w3-third">
+    
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <img src="Unakoti.jpg" style="width:100%" alt="Unakoti">
+          <div class="w3-display-bottomleft w3-container w3-text-black">
+            
+          </div>
+        </div>
+        <div class="w3-container">
+          <p><i class="fa fa-map-marker fa-fw w3-margin-right w3-large w3-text-teal"></i><a href="https://www.google.com/maps/place/Tripura/@23.7336352,91.1823731" style="color:black;text-decoration:none"><b> Tripura in map</b></a></p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i><a href="https://tripura.gov.in" style="color:black;text-decoration:none"><b> Tripura Government</b></a></p>                   
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-language fa-fw w3-margin-right w3-text-teal"></i> <a href="https://en.wikipedia.org/wiki/Kokborok" style="color:black;text-decoration:none">Language</b></p>
+	  <p><i class="fa fa-thumb-tack fa-fw w3-margin-right w3-large w3-text-teal"></i><b style="color:black">Coordinates</b><br>  	  
+	  <p><a href="https://geohack.toolforge.org/geohack.php?pagename=Tripura&params=23.84_N_91.28_E_region:IN-TR_type:adm1st" style="color:black;text-decoration:none">23.84°N 91.28°E</a></p>
+          <p style="color:black">* To get your current location, click the button below *</p>
+          <button onclick="getLocation()">Try It</button>
+          <p id="demo"></p>
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+    
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        
+	<h3 class="w3-text-grey w3-padding-16">&nbsp;&nbsp;<b>Capital : Agartala</b></h3>
+        <div class="w3-container">
+          <h4 class="w3-opacity"><b>Motto(s): Satyameva Jayate (Truth alone triumphs)<br>Anthem  : None</b></h4>
+	  <hr>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card w3-white">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-spinner fa-spin fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>History</h2>
+        <h5 class="w3-opacity"><b><i class="fa fa-calendar fa-fw w3-margin-right"></i>The state was formed on 21 January 1972.</b></h5>
+        <div class="w3-container">  
+        <hr>      
+        </div>
+	<div class="w3-container">
+	<h5 class="w3-opacity"><b>According to 2011 census Tripura has a total population of '3,671,032' people which got ranked 22nd over all other states. With a density of 350 people/kmsq.</b></h5> 
+        <h5 class="w3-opacity"><b>It has a total count of 8 districts with Agartala as its most populous city.</b></p>
+	</div><br><br><br>
+      </div>
+
+
+
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+  <!-- End Page Container -->
+</div>
+<div style="text-align:center"class="w3-white w3-text-grey w3-card-4"><h1><i class="fa fa-location-arrow fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Famous places to visit</h1></div>
+<div class="w3" style="margin-left:10px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  <!-- Product grid -->
+<div class="w3-main w3-content w3-padding" style="max-width:1500px;">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <a style="text-decoration:none;color:black" href="majorcities.html"><img id="places" src="cities.jpg" >    
+        <p>Major Cities</p></a>
+    </div>
+    <div class="w3-quarter">
+      <a style="text-decoration:none;color:black" href="waterfalls.html"><img id="places" src="falls.jpg" >  
+        <p>Water Falls</p></a>
+    </div>
+    <div class="w3-quarter">
+      <img id="places" src="Jampui-Hill.jpg" > 
+        <p>Hill Station</p>
+    </div>
+   <div class="w3-quarter">
+      <img id="places" src="temple.jpg" >
+        <p>Religious Sites</p>
+    </div>
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img id="places" src="sanctuary.jpg" >
+        <p>Sancturies & National Parks</p>
+    </div>
+    <div class="w3-quarter">
+      <img id="places" src="Forests.jpg" >
+        <p>Forest</p>
+    </div>
+  </div>
+<footer style="font-size:20px"class="w3-container w3-teal w3-center w3-margin-top">
+  <p>Find us on social media.</p>
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <br>
+</footer><br>
+
+
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+</body>
+</html>
