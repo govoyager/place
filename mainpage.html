@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - Telling a story</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://raw.githubusercontent.com/Beanow/jQuery-storytime/master/jQuery.storytime.css'>
+  
+<style>
+body {
+  overflow: hidden;
+}
+
+h1, h2, h3 {
+  font-family: "Bree Serif", serif;
+}
+
+h1 {
+  font-size: 5em;
+  margin: 0.2em 0;
+}
+
+p {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.6em;
+}
+
+article {
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  padding: 5%;
+}
+
+#slide1 {
+  z-index: 1;
+}
+
+#slide2 {
+  background: cadetblue;
+  z-index: 2;
+  animation-delay: 5.4s;
+  color: #fff;
+}
+
+.pop_link {
+  position: relative;
+  background: #3b6f71;
+  padding: 0 0.3em;
+  font-size: 0.9em;
+  cursor: pointer;
+  display: inline-block;
+}
+.pop_link .popover {
+  display: none;
+  transition: all 0.5s ease;
+  position: absolute;
+  z-index: 900;
+  bottom: 2.5em;
+  background: #222;
+  padding: 1em;
+  left: -12%;
+  width: 100%;
+  font-size: 0.6em;
+}
+.pop_link .popover img {
+  width: 100%;
+  height: auto;
+}
+.pop_link:hover .popover {
+  display: block;
+}
+.pop_link:hover .popover:after {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid #222;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  margin-left: -6px;
+}
+
+#slide3 {
+  z-index: 3;
+  background: #fff;
+  display: none;
+}
+#slide3 .container {
+  display: flex;
+  justify-content: flex-end;
+}
+#slide3 .container div {
+  flex-grow: 1;
+  margin: 0 2%;
+}
+
+#slide4 {
+  display: none;
+  z-index: 4;
+  background: cornflowerblue;
+}
+
+#slide5 {
+  display: none;
+  z-index: 5;
+  background: lightblue;
+}
+
+.chart {
+  position: relative;
+  display: inline-block;
+  margin: 20px 10px;
+  color: #999;
+  font-size: small;
+  text-align: center;
+}
+.chart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/***** Animations *****/
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+.b {
+  animation-delay: 1.2s;
+}
+
+.c {
+  animation-delay: 3.4s;
+}
+
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+  80% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp;
+}
+
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  animation-name: bounceInDown;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-30px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  animation-name: bounceInRight;
+}
+
+/***** Special Button Styles *****/
+.slidein:nth-child(even) {
+  background: #4c9093 !important;
+}
+
+.slidein:nth-child(odd) {
+  background: #3b8285 !important;
+}
+
+.button {
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  margin: 3em 0 0;
+  display: block;
+  width: 195px;
+  height: 50px;
+  font-size: 0.7em;
+  font-weight: 600;
+  overflow: hidden;
+}
+.button .ten {
+  font-size: 7px;
+  line-height: 52px;
+}
+.button:hover .slidein {
+  left: 0%;
+  transition-delay: 0.5s;
+}
+.button:hover .two {
+  left: 0%;
+  transition-delay: 1.5s;
+}
+.button:hover .three {
+  left: 0%;
+  transition-delay: 3s;
+}
+.button:hover .four {
+  left: 0%;
+  transition-delay: 4.5s;
+}
+.button:hover .five {
+  left: 0%;
+  transition-delay: 6s;
+}
+.button:hover .six {
+  left: 0%;
+  transition-delay: 7.5s;
+}
+.button:hover .seven {
+  left: 0%;
+  transition-delay: 9s;
+}
+.button:hover .eight {
+  left: 0%;
+  transition-delay: 10.5s;
+}
+.button:hover .nine {
+  left: 0%;
+  transition-delay: 13s;
+}
+.button:hover .ten {
+  left: 0%;
+  transition-delay: 16s;
+}
+.button .slidein {
+  background: #3f7aa7;
+  left: -100%;
+  z-index: 2;
+}
+.button a {
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: left 300ms;
+  letter-spacing: 1px;
+  background: #3b6f71;
+  position: absolute;
+  font-weight: bold;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  line-height: 50px;
+}
+
+.text {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: bold;
+  color: #a0a0a0;
+  display: block;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+.text a {
+  text-decoration: none;
+  color: #007eff;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,600,800,200,300' rel='stylesheet' type='text/css'>
+
+<body>
+  
+<article id="slide1">
+	<section>
+		<h1 class="animated bounceInUp">Hi there,</h1>
+		<p class="animated bounceInDown b">Here is a small gift from your friend ...</p>
+		<h2 class="animated bounceInDown c">Hope you like it !</h2>
+	</section>
+	<section>
+		
+	</section>
+</article>
+
+<article id="slide2" class="animated bounceInRight">
+	<section>
+    <h1>This webpages consists of many things which you might need now or in future...</h1>
+    <div id="fun_button" class="button">
+      <a href="home.html">home page	 &raquo;</a>
+    </div>
+	</section>
+</article>
+
+<article id="slide3" class="animated">
+  <h1>Ways to enroll me</h1>
+  <div class="container">
+    <div>
+      <h2>Provide a path</h2>
+      <p>We all want to be a part of something great. Giving someone a step-by-step plan to suceed is almost required for employers today.</p>
+    </div>
+    <div>
+      <h2>Provide compensation</h2>
+      <p>No one wants to provide the best parts of themselves for free. They want what the market will bear. Here's where I stack up:
+      
+      <span class="pop_link">What I'm worth<span class="popover animated bounceInUp"><img src="https://d13yacurqjgara.cloudfront.net/users/99875/screenshots/1433198/mark-and-john.gif" alt="money rain" /></span></span>
+      </p>
+      <h2>These are my skills</h2>
+      
+      <div class="container">
+        <div class="chart" data-percent="95">HTML</div>
+        <div class="chart" data-percent="95">CSS</div>
+        <div class="chart" data-percent="67">jQuery</div>
+        <div class="chart" data-percent="76">Wordpress</div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="button">
+      <a href="#slide4" class="first"> Keep going &raquo;</a>
+      <a href="#slide4" class="slidein"> There's more </a>
+      <a href="#slide4" class="slidein two"> A bit </a>
+    </div>
+</article>  
+
+<article id="slide4">
+	<section>
+		<h1 class="animated bounceInUp">Slide 4</h1>
+		<p class="animated bounceInDown b">More things?</p>
+		<h2 class="animated bounceInDown c">Here's some more I guess.</h2>
+	</section>
+	<section>
+		
+	</section>
+</article>
+  
+<article id="slide5">
+  <section>
+		<h1 class="animated bounceInUp">Slide 5</h1>
+		<p class="animated bounceInDown b">More things are happening!!!</p>
+		<h2 class="animated bounceInDown c">Here's some more I guess.</h2>
+	</section>
+<section>
+		
+	</section>
+</article>
+  
+</body>
+</html>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://rendro.github.io/easy-pie-chart/javascripts/jquery.easy-pie-chart.js'></script>
+      <script id="rendered-js" >
+/*
+var button = $('article .button a')
+
+function showNext() {
+  $('article').nextUntil($this).show("slow");
+}
+
+button.click(showNext);
+
+
+button.click(function() {
+  $('article').first().show("slow" , function showNext() {
+    $(this).next('article').show("slow" , showNext);
+  });
+});
+*/
+
+
+// Pie Charts
+$(function () {
+  $('.chart').easyPieChart({
+    scaleColor: false,
+    lineWidth: 4,
+    lineCap: 'round',
+    barColor: '#333',
+    size: 80,
+    animate: 500 });
+
+});
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
